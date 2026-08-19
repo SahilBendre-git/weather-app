@@ -49,7 +49,7 @@
 
         <div style="height: 40px;"></div>
 
-        <div class="stats widget" id="weather-statistics" style="display: none;">
+        <div class="stats widget" id="weather-statistics" style="display: block;">
 
             <h2>
                 Statistics
@@ -85,11 +85,19 @@
                         <i id="out_local_time"></i>
                     </p>
 
+                    <p>
+                        <b>🌍 Time Zone ID: </b>
+                        <i id="out_tz_id"></i>
+                    </p>
+
                 </div>
             </div>
 
             <div class="box-r">
                 <div style="float: left; text-align: left;">
+                    
+                    <img src="" id="out_icon" alt="" style="float: right;">
+                    
                     <b>🌡️ Weather Details</b>
                     
                     <hr>
@@ -102,6 +110,7 @@
                     <p>
                         <b>🌤️ Condition: </b>
                         <i id="out_condition"></i>
+
                     </p>
 
                     <p>
@@ -112,6 +121,11 @@
                     <p>
                         <b>🌬️ Wind Speed: </b>
                         <i id="out_wind_speed"></i>
+                    </p>
+
+                    <p>
+                        <b>⌚ Last Updated: </b>
+                        <i id="out_last_updated"></i>
                     </p>
 
                 </div>

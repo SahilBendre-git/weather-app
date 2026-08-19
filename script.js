@@ -14,13 +14,22 @@ form.addEventListener('submit', function (e) {
 
     //Get weather data
 
-        error.innerText = 'Loading...'
+    error.innerText = 'Loading...'
 
-        document.getElementById('search_btn').hidden = true;
+    document.getElementById('search_btn').hidden = true;
 
 
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${configs.api_key}&q=${in_place}&aqi=yes`)
-    .then(response => response.json())
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${configs.api_key}&q=${in_place}&aqi=yes`)
+    .then(response => {
+        if (!response.ok) {
+            error.innerText = 'Error fetching weather data.';
+            document.getElementById('search_btn').hidden = false;
+            document.getElementById('weather-form').reset();
+            error.style.color = 'red';
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(res => {
 
         error.style.color = 'green';
@@ -36,6 +45,10 @@ form.addEventListener('submit', function (e) {
         const condition = document.getElementById('out_condition');
         const humidity = document.getElementById('out_humidity');
         const wind_speed = document.getElementById('out_wind_speed');
+        const last_updated = document.getElementById('out_last_updated');
+        const tz_id = document.getElementById('out_tz_id');
+        const img = document.getElementById('out_icon');
+
 
         place.innerText = res.location.name;
         region.innerText = res.location.region;
@@ -45,6 +58,10 @@ form.addEventListener('submit', function (e) {
         condition.innerText = res.current.condition.text;
         humidity.innerText = `${res.current.humidity}%`;
         wind_speed.innerText = `${res.current.wind_kph} km/h`;
+        last_updated.innerText = res.current.last_updated;
+        tz_id.innerText = res.location.tz_id;
+        img.src = res.current.condition.icon;
+
 
         document.getElementById('weather-statistics').style.display = 'block';
         document.getElementById('search_btn').hidden = false;
@@ -56,8 +73,4 @@ form.addEventListener('submit', function (e) {
         error.style.color = 'red';
         error.innerText = 'Error fetching weather data. Please try again later.';
     })
-
-    
-    
-
 })
