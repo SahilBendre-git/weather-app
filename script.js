@@ -66,7 +66,6 @@ form.addEventListener('submit', function (e) {
         document.getElementById('weather-statistics').style.display = 'block';
         document.getElementById('search_btn').hidden = false;
 
-        console.log(res);
     })
     .catch(error => {
         console.log(error)
