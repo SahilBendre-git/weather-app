@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather App - Sahil Bendre</title>
+</head>
+<header>
+    <script src="config.js"></script>
+    <link rel="stylesheet" href="home-style.css">
+</header>
+<body>
+    <nav>
+        <div class="navbar">
+
+        </div>
+
+        <font size="5">
+            <b>
+                🌤️ My Weather App - <i>A Project by Sahil Bendre</i>
+            </b>
+        </font>        
+    </nav>
+
+    <div style="height: 50px;"></div>
+
+    <center>
+        <div class="widget">
+
+            <div class="icon-1">
+                🟢 Weather App
+            </div>
+
+            <div style="height: 30px;"></div>
+
+            <form id="weather-form">
+                
+                <input type="text" name="" placeholder="🔍 Enter City Name" id="input_city" class="place-inp">
+
+                <button type="submit" id="search_btn" class="search-button">🔍 Search</button>
+
+                <br><br>
+
+                <p id="error-messages"></p>
+
+            </form>
+
+        </div>
+
+        <div style="height: 40px;"></div>
+
+        <div class="stats widget" id="weather-statistics" style="display: none;">
+
+            <h2>
+                Statistics
+            </h2>
+
+            <hr>
+
+            <br><br>
+
+            <div class="box-l">
+                <div style="float: left; text-align: left;">
+                    <b>📍 Location Details</b>
+                    
+                    <hr>
+
+                    <p>
+                        <b>🛐 Place: </b>
+                        <i id="out_place"></i>
+                    </p>
+
+                    <p>
+                        <b>🏔️ Region: </b>
+                        <i id="out_region"></i>
+                    </p>
+
+                    <p>
+                        <b>🚩 Country: </b>
+                        <i id="out_country"></i>
+                    </p>
+
+                    <p>
+                        <b>⌛ Local Time: </b>
+                        <i id="out_local_time"></i>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="box-r">
+                <div style="float: left; text-align: left;">
+                    <b>🌡️ Weather Details</b>
+                    
+                    <hr>
+
+                    <p>
+                        <b>♨️ Temperature: </b>
+                        <i id="out_temp"></i>
+                    </p>
+
+                    <p>
+                        <b>🌤️ Condition: </b>
+                        <i id="out_condition"></i>
+                    </p>
+
+                    <p>
+                        <b>💧 Humidity: </b>
+                        <i id="out_humidity"></i>
+                    </p>
+
+                    <p>
+                        <b>🌬️ Wind Speed: </b>
+                        <i id="out_wind_speed"></i>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </center>
+
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

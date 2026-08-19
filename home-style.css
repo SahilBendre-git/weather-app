@@ -1,0 +1,74 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+nav{
+    max-width: 97.5%;
+    background-color: rgba(245, 244, 244, 0.882);
+    height: 100px;
+    display: flex;
+    box-shadow: 0px 10px 10px rgba(128, 128, 128, 0.434);
+    padding: 0px 20px;
+    align-items: center;
+}
+
+.navbar{
+    float: right;
+}
+
+.widget {
+    width: 70%;
+    border-radius: 10px 20px;
+    box-shadow: 0px 10px 25px grey;
+    padding: 30px;
+}
+
+.icon-1
+{
+    padding: 10px;
+    background-color: rgba(172, 255, 47, 0.179);
+    width: 20%;
+    border: 1px solid lime;
+    border-radius: 60px;
+}
+
+.place-inp{
+    width: 60%;
+    height: 30px;
+}
+
+.search-button{
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.search-button:hover{
+    background-color: rgb(86, 86, 243);
+    cursor: pointer;
+}
+
+.box-l{
+    width: 40%;
+    padding: 8px;
+    float: left;
+}
+
+.stats{
+    height: 700px;
+}
+
+.box-r{
+    width: 40%;
+    padding: 8px;
+    float: right;
+}
+
+@media (max-width: 768px) {
+    .box-l, .box-r {
+        width: 100%;
+        float: none;
+    }
+}
