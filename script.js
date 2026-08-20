@@ -48,20 +48,28 @@ form.addEventListener('submit', function (e) {
         const last_updated = document.getElementById('out_last_updated');
         const tz_id = document.getElementById('out_tz_id');
         const img = document.getElementById('out_icon');
+        const feels_like = document.getElementById('out_feels_like');
+        const lat = document.getElementById('out_lat');
+        const lon = document.getElementById('out_lon');
+        const date = document.getElementById('out_date');
+
 
 
         place.innerText = res.location.name;
         region.innerText = res.location.region;
         country.innerText = res.location.country;
         local_time.innerText = res.location.localtime;
-        temp.innerText = `${res.current.temp_c}°C`;
+        temp.innerText = `${res.current.temp_c}°C / ${res.current.temp_f}°F`;
         condition.innerText = res.current.condition.text;
         humidity.innerText = `${res.current.humidity}%`;
         wind_speed.innerText = `${res.current.wind_kph} km/h`;
         last_updated.innerText = res.current.last_updated;
         tz_id.innerText = res.location.tz_id;
         img.src = res.current.condition.icon;
-
+        feels_like.innerText = `${res.current.feelslike_c}°C / ${res.current.feelslike_f}°F`;
+        lat.innerText = res.location.lat;
+        lon.innerText = res.location.lon;
+        date.innerText = new Date().toLocaleDateString(); 
 
         document.getElementById('weather-statistics').style.display = 'block';
         document.getElementById('search_btn').hidden = false;
