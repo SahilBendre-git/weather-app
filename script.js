@@ -1,7 +1,16 @@
 const form = document.getElementById('weather-form');
 
+let counter = 0;
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    if(counter >= 5) {
+        alert("You have reached the maximum number of searches per minute. Please wait.");
+        return;
+    }
+
+    counter++;
 
     const in_place = document.getElementById('input_city').value;
 
@@ -19,7 +28,7 @@ form.addEventListener('submit', function (e) {
     document.getElementById('search_btn').hidden = true;
 
 
-    fetch(`https://api.weatherapi.com/v1/current.json?key=${configs.api_key}&q=${in_place}&aqi=yes`)
+    fetch(`https://x8ki-letl-twmt.n7.xano.io/api:7nc-apRv/get-weather-data_fromserver?in_city=${in_place}`)
     .then(response => {
         if (!response.ok) {
             error.innerText = 'Error fetching weather data.';
