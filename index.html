@@ -51,7 +51,11 @@
 
         <div class="stats widget" id="weather-statistics" style="display: none;">
 
-            <h2 style="float: right; cursor: pointer;" title="Close Stats" onclick="document.getElementById('weather-statistics').style.display = 'none'">
+            <h2 style="float: right; cursor: pointer;" title="Close" 
+            onclick="document.getElementById('weather-statistics').style.display = 'none'; 
+            document.getElementById('weather-form').reset(); 
+            document.getElementById('error-messages').innerText = '';"
+            >
                 🧧
             </h2>
 
